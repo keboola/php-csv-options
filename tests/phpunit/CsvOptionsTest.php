@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Keboola\CsvOptions\Tests;
 
 use Keboola\CsvOptions\CsvOptions;
-use Keboola\CsvOptions\InvalidArgumentException;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class CsvOptionsTest extends TestCase

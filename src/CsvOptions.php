@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Keboola\CsvOptions;
 
+use InvalidArgumentException;
+
 class CsvOptions
 {
     public const DEFAULT_DELIMITER = ',';
