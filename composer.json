@@ -1,5 +1,6 @@
 {
     "name": "keboola/csv-options",
+    "description": "CSV options lib",
     "license": "MIT",
     "require": {
         "php": "^7.1"
