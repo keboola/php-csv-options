@@ -1,0 +1,12 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+before_script:
+  - docker -v
+  - docker-compose build dev
+script:
+  - docker-compose run dev composer ci
