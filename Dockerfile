@@ -7,7 +7,6 @@ ENV COMPOSER_PROCESS_TIMEOUT 3600
 
 WORKDIR /code/
 
-COPY docker/php-prod.ini /usr/local/etc/php/php.ini
 COPY docker/composer-install.sh /tmp/composer-install.sh
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -7,6 +7,6 @@ services:
 
 before_script:
   - docker -v
-  - docker-compose build tests
+  - docker build -t keboola/php-csv-options .
 script:
-  - docker-compose run tests composer ci
+  - docker run --rm -t keboola/php-csv-options composer ci

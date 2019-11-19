@@ -1,9 +1,7 @@
 version: '2'
 services:
-  tests: &test
+  dev:
     build: .
-  dev: &dev
-    <<: *test
     image: keboola/php-csv-options
     volumes:
       - ./:/code
