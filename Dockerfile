@@ -1,4 +1,6 @@
-FROM php:7-cli
+ARG PHP_VERSION=7.4
+# the default env bellow is used when build pipeline sends "PHP_VERSION=" - the above default value is ignored in that case
+FROM php:${PHP_VERSION:-7.4}-cli as dev
 
 ARG COMPOSER_FLAGS="--prefer-dist --no-interaction"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -25,10 +27,12 @@ ENV LC_ALL=en_US.UTF-8
 
 ## Composer - deps always cached unless changed
 # First copy only composer files
-COPY composer.* /code/
+COPY composer.* .
 # Download dependencies, but don't run scripts or init autoloaders as the app is missing
 RUN composer install $COMPOSER_FLAGS --no-scripts --no-autoloader
+
 # copy rest of the app
-COPY . /code/
+COPY . .
+
 # run normal composer - all deps are cached already
 RUN composer install $COMPOSER_FLAGS
