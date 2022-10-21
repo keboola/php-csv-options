@@ -1,7 +1,10 @@
 version: '2'
 services:
-  dev:
+  release: &release
     build: .
     image: keboola/php-csv-options
+
+  dev:
+    <<: *release
     volumes:
       - ./:/code

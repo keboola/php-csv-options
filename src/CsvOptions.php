@@ -13,16 +13,19 @@ class CsvOptions
     public const DEFAULT_ESCAPED_BY = '';
 
     /**
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.PropertyTypeHint
      * @var string
      */
     private $delimiter;
 
     /**
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.PropertyTypeHint
      * @var string
      */
     private $enclosure;
 
     /**
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.PropertyTypeHint
      * @var string
      */
     private $escapedBy;
